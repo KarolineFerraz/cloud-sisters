@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useGame } from '../state/GameContext'
-import { LEVEL_LABELS, LEVEL_ORDER, XP_BY_LEVEL, questionsByLevel } from '../data/questions'
+import { LEVEL_LABELS, XP_BY_LEVEL, questionsByLevel } from '../data/questions'
 import type { LevelId } from '../data/questions'
 import { isGameLevelUnlocked } from '../state/progress'
 import ProgressBar from '../components/ProgressBar'

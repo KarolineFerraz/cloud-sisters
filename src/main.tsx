@@ -5,9 +5,12 @@ import App from './App'
 import { GameProvider } from './state/GameContext'
 import './styles.css'
 
+// Remove a barra final para uso como basename do React Router (ex.: "/cloud-sisters")
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <GameProvider>
         <App />
       </GameProvider>

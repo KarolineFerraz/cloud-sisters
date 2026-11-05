@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cloud Sisters</title>
+    <script>
+      // Redirecionamento para SPA no GitHub Pages.
+      // Converte o caminho atual em um parâmetro de query e redireciona para a raiz
+      // do app, onde o index.html restaura a rota original (ver index.html).
+      // Baseado na técnica spa-github-pages (rafgraph), domínio público.
+      (function () {
+        var pathSegmentsToKeep = 1 // mantém "/cloud-sisters"
+        var l = window.location
+        l.replace(
+          l.protocol +
+            '//' +
+            l.hostname +
+            (l.port ? ':' + l.port : '') +
+            l.pathname
+              .split('/')
+              .slice(0, 1 + pathSegmentsToKeep)
+              .join('/') +
+            '/?/' +
+            l.pathname
+              .slice(1)
+              .split('/')
+              .slice(pathSegmentsToKeep)
+              .join('/')
+              .replace(/&/g, '~and~') +
+            (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+            l.hash
+        )
+      })()
+    </script>
+  </head>
+  <body></body>
+</html>
